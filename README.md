@@ -175,4 +175,4 @@ Sau khi cài đặt lần đầu thành công, không cần tạo lại môi tr�
 3. Chạy:
    .\.venv\Scripts\python.exe -m uvicorn main:app --reload --host 127.0.0.1 --port 8000
 4. Mở http://127.0.0.1:8000.
-Dành cho người kiểm thử: README này mô tả cách chạy và các bước kiểm tra dựa trên mã nguồn, không phải biên bản xác nhận tất cả chức năng đã hoạt động thành công trên mọi máy. Cần có MySQL và các cấu hình môi trường phù hợp
+Dành cho người kiểm thử: README này mô tả cách chạy và các bước kiểm tra dựa trên mã nguồn, không phải biên bản xác nhận tất cả chức năng đã hoạt động thành công trên mọi máy. Cần có MySQL và các cấu hình môi trường phù hợp.
