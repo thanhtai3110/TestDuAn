@@ -515,7 +515,7 @@ Chức năng này sử dụng mã xác minh gửi qua Gmail SMTP.
 ### 11.1. Cấu hình Gmail SMTP
 1. Tạo mật khẩu ứng dụng Google (App Password)
 Tạo mật khẩu ứng dụng Google
-
+https://accounts.google.com/v3/signin/challenge/pwd?TL=AAxq8nueous9PpLGlqLSfhsRuERTP2DrB_ZE9-Xk06apUxgcyPJtjEAeA7zBKA2U&authuser=0&cid=3&continue=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords%3Futm_source%3Dchatgpt.com&dsh=S856873224%3A1794913779778622&flowName=GlifWebSignIn&followup=https%3A%2F%2Fmyaccount.google.com%2Fapppasswords%3Futm_source%3Dchatgpt.com&rart=ANgoxccXYRu_ftwPTO0obxmDm4ZVNLNHDbe5ISWXx_okTs4QP7n73cbwqwzh7FppTtVkkkq4wymtmH57paw7lFChfHB7NCYJul7zwRqzL9gTjJHDWWouYYs&rpbg=1
 Đây là link chính bạn cần để lấy mật khẩu SMTP.
 2. Bật xác minh 2 bước (nếu chưa bật)
 Bật xác minh 2 bước GoogleGoogle yêu cầu bật xác minh 2 bước trước khi tạo mật khẩu ứng dụng.
