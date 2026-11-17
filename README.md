@@ -1,5 +1,18 @@
-JobConnect — Hướng dẫn cài đặt và kiểm thử
-Hướng dẫn dành cho giảng viên, thành viên nhóm và người kiểm thử sử dụng Windows + VS Code để chạy dự án từ mã nguồn.
+💼 JobConnect
+Hướng dẫn cài đặt, chạy và kiểm thử website
+Tài liệu dành cho giảng viên, thành viên nhóm và người kiểm thử sử dụng Windows + VS Code. Thực hiện lần lượt các bước bên dưới để chạy dự án từ mã nguồn.
+Bắt đầu nhanh: Cài Python và MySQL → Cấu hình Backend/.env → Tạo bảng/dữ liệu mẫu → Chạy FastAPI → Mở website tại http://127.0.0.1:8000.
+
+📌 Mục lục
+- 1. Thông tin dự án
+- 2. Chuẩn bị
+- 3. Cài đặt lần đầu
+- 4. Chạy website
+- 5. Tài khoản mẫu
+- 6. Kiểm thử chức năng
+- 7. Kiểm tra API
+- 8. Khắc phục lỗi
+- 9. Chạy lại lần sau
 1. Thông tin dự án
 Thành phần	Công nghệ
 Giao diện	HTML, CSS, JavaScript thuần
@@ -74,7 +87,7 @@ Chạy lần lượt trong PowerShell tại Backend:
 .\.venv\Scripts\python.exe setup_password_reset.py
 5.3. Nạp tài khoản và việc làm mẫu — chỉ với database kiểm thử mới:
 .\.venv\Scripts\python.exe seed_demo.py
-Chú ý: Không dùng seed_demo.py tùy tiện trên database thật. init_db.py không tự sửa tất cả cấu trúc bảng đã tồn tại.
+⚠️ Chỉ chạy seed_demo.py khi dùng database test. Không nạp dữ liệu mẫu tùy tiện vào database đang có dữ liệu thật. init_db.py không tự cập nhật mọi bảng đã tồn tại.
 
 4. Chạy website
 Trong PowerShell đang ở thư mục Backend, nhập:
@@ -88,7 +101,8 @@ Kiểm tra trạng thái máy chủ	http://127.0.0.1:8000/health
 
 Kết quả mong đợi tại /health:
 {"ok": true}
-Giữ Terminal chạy trong thời gian kiểm thử. Nhấn Ctrl + C khi muốn tắt website.
+✅ Đã chạy thành công khi mở được website và Swagger trong trình duyệt. Giữ Terminal chạy trong suốt quá trình test. Nhấn Ctrl + C để dừng server.
+
 5. Tài khoản mẫu để test
 Các tài khoản dưới đây được tạo bởi seed_demo.py nếu chưa tồn tại trong database kiểm thử:
 Vai trò	Email	Mật khẩu	Mục cần kiểm tra
@@ -100,6 +114,7 @@ Candidate	Tự đăng ký email mới	Đúng 8 ký tự	Tìm/lưu việc, CV, n�
 Mật khẩu 123456 chỉ áp dụng cho tài khoản demo vừa tạo, không thay đổi mật khẩu tài khoản đã tồn tại. Không sử dụng các thông tin đăng nhập này trên hệ thống thật.
 
 6. Hướng dẫn kiểm thử chức năng
+Thứ tự gợi ý: Trang chủ → Candidate → Recruiter → Admin → Quên mật khẩu (nếu có SMTP).
 6.1. Trang chủ (không cần đăng nhập)
 1. Mở http://127.0.0.1:8000.
 2. Kiểm tra giao diện, ảnh banner và chuyển Sáng/Tối.
@@ -154,6 +169,7 @@ Quên mật khẩu	POST /auth/forgot-password
 
 Với API yêu cầu đăng nhập, cần JWT Bearer token và đúng vai trò. Không công khai token đăng nhập trong ảnh chụp màn hình hay báo cáo.
 8. Khắc phục lỗi thường gặp
+Nếu lỗi xảy ra, kiểm tra Terminal chạy Uvicorn và tab Console/Network trong trình duyệt trước.
 Hiện tượng	Cách xử lý
 405 Method Not Allowed	Kiểm tra đang mở cổng 8000, đúng đường dẫn và đúng phương thức GET / POST / PATCH / DELETE; không gọi API vào Live Server.
 404 Not Found	Kiểm tra đường dẫn, tên file và hai thư mục frontend / Backend có nằm cùng cấp.
